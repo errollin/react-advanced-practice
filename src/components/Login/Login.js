@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import classes from "*.module.css";
 import Card from "../UI/Card/Card";
-import Button from '../UI/Button/Button';
+import classes from "./Login.module.css";
+import Button from "../UI/Button/Button";
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -15,7 +15,7 @@ const Login = (props) => {
     setEnteredEmail(event.target.value);
 
     setFormIsValid(
-      event.value.includes("@") && enteredPassword.trim().length > 6
+      event.target.value.includes("@") && enteredPassword.trim().length > 6
     );
   };
 
@@ -37,6 +37,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    props.onLogin(enteredEmail, enteredPassword);
   };
 
   return (
@@ -56,7 +57,6 @@ const Login = (props) => {
             onBlur={validateEmailHandler}
           />
         </div>
-
         <div
           className={`${classes.control} ${
             passwordIsValid === false ? classes.invalid : ""
@@ -72,7 +72,7 @@ const Login = (props) => {
           />
         </div>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disbaled={!formIsValid}>
+          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
           </Button>
         </div>
