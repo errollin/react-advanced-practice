@@ -38,7 +38,7 @@ const Login = (props) => {
 
   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
     value: "",
-    isVaild: null,
+    isValid: null,
   });
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Login = (props) => {
     };
   }, []);
 
-  const { isVaild: emailIsValid } = emailState;
+  const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
   useEffect(() => {
