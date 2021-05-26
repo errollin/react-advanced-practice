@@ -1,6 +1,6 @@
 # react-advanced-practice
 
-A advanced react practice project learn from Max on Udemy
+A advanced react practice project learn from Max on Udemy.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
